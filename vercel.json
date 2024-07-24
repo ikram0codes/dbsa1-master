@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "dist/**", "use": "@vercel/static" },
+    { "src": "serverless/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/serverless/test.js"
+    }
+  ]
+}
